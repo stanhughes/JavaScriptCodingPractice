@@ -19,11 +19,6 @@ while (sideA.length > 0) {
   let time2Cross = (person1[0] > person2[0]) ? person1[0] : person2[0];
   totalTime = totalTime + time2Cross;
 
-  // says its a number
-  if (isNaN(totalTime)) {
-    totalTime = parseInt(totalTime);
-  }
-
   // cross bridge
   sideB.push(person1[0]);
   sideB.push(person2[0]);
