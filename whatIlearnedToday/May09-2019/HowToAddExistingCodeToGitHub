@@ -1,0 +1,8 @@
+// Create the new repo on github
+// init with git:  $ git init
+// add the files: $ git add .
+// do an initial commit: $ git commit -m "initial commit"
+// point the local git repo to the new github repo:
+//   $ git remote add origin <remote repository URL>
+// verify that it is correct: $ git remote -v
+// push to the new github repo: $ git push -u origin master
