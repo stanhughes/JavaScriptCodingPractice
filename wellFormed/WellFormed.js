@@ -12,8 +12,14 @@ function isWellFormed(str) {
   let arrayStr = str.split(""); // empty string to split between each char
   console.log('arayStr:' + arrayStr);
 
+  let balance = [];
   for (let i in arrayStr) {
     console.log('arrayStr[i]' + arrayStr[i]);
+    if (balance.length < 1) {
+      balance.push(arrayStr[i]);
+    } else {
+      if (balance) 
+    }
   };
   return formWell;
 };
