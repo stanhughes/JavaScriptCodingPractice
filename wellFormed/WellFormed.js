@@ -1,3 +1,5 @@
+'use strict'
+
 console.log('Well Formed?');
 
 const wellFormed = '([])[]({})';
@@ -6,8 +8,26 @@ const malFormed1 = '([)]';
 
 const malFormed2 = '((()';
 
+function isMatch(left,right) {
+  let match = false;
+  switch (left) {
+    case '(':
+      match = (right === ')');
+      break;
+    case '{':
+      match = (right === '}');
+      break;
+    case '[':
+      match = (right === ']');
+      break;
+    default:
+      break;
+  };
+  return match;
+};
+
 function isWellFormed(str) {
-  let formWell = false;
+  let formedWell = false;
 
   let arrayStr = str.split(""); // empty string to split between each char
   console.log('arayStr:' + arrayStr);
@@ -18,10 +38,21 @@ function isWellFormed(str) {
     if (balance.length < 1) {
       balance.push(arrayStr[i]);
     } else {
-      if (balance) 
+      if (isMatch(balance[balance.length-1],arrayStr[i])) {
+        balance.pop();
+      } else {
+        balance.push(arrayStr[i]);
+      }
     }
   };
-  return formWell;
+  
+  if (balance.length < 1) {
+    formedWell = true;
+  }
+
+  return formedWell;
 };
 
 console.log('isWellFormed:' + isWellFormed(wellFormed));
+console.log('malFormed1=' + malFormed1 + ' is well formed? ' + isWellFormed(malFormed1)); 
+console.log('malFormed2=' + malFormed2 + ' is well formed? ' + isWellFormed(malFormed2));
