@@ -3,13 +3,7 @@ function getRandomInt(max) {
 }
 
 function random5() {
-  let randomNum = 0;
-  while (randomNum <= 0) {
-    randomNum = getRandomInt(5+1)
-  }
-  return (
-    randomNum
-  )
+  return (getRandomInt(5) + 1)
 }
 
 function random7() {
